@@ -6,7 +6,7 @@
 
     <style>
         dt{
-            font-size:30px;
+            font-size:24px;
             color:green;
         }
         body{
@@ -29,10 +29,32 @@
         <dt>git init</dt>
             <dd>.git이라는 숨겨진 파일이 생성된다.</dd>
             <br><br><br>
-        <dt>git remote add origin (github reurl)</dt>
+        <dt>git remote add origin (github url)</dt>
             <dd>로컬 저장소(PC)에 원격 저장소(github)를 연결하게 해준다.</dd>
+            <br><br><br>
         <dt>git status</dt>
             <dd>현재의 git 상태를 알려준다.</dd>
+            <dd>변경된 사항이 있는 디렉터리를 알려준다.</dd>
+            <br><br><br>
+        <dt>git add (Directory_Name)</dt>
+            <dd>디렉터리를 스테이지 영역에 등록한다.</dd>
+            <dd>디렉터리를 commit 하기 전 단계이다.</dd>
+            <br><br><br>
+        <dt>git commit -m "Message"</dt>
+            <dd>스테이지 영역에 있는 디렉터리를 commit한다.</dd>
+            <dd>메시지는 로그를 확인할 때 볼 수 있다.</dd>
+        <dt>git config --global user.name "User_Name"</dt>
+            <dd>사용자의 이름을 git에 입력한다.</dd>
+            <br><br><br>
+        <dt>git config --global user.email "User_Email"</dt>
+            <dd>사용자의 이메일을 git에 입력한다.</dd>
+            <br><br><br>
+        <dt>git log</dt>
+            <dd>지금까지 이루어진 로그를 확인한다.</dd>
+            <br><br><br>
+        <dt>git push -u origin (Branch_Name)</dt>
+            <dd>commit이 완료된 디렉터리를 github에 저장한다.</dd>
+         <br><br><br>
     </ul>
 </body>
 
