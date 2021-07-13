@@ -5,14 +5,8 @@
     <title>GIT Summery</title>
 
     <style>
-        dt{
-            font-size:24px;
-            color:green;
-        }
         body{
             background-color:blanchedalmond;
-        }
-        body{
             -webkit-touch-callout: none;
             -webkit-user-select: none;
             -khtml-user-select: none;
@@ -20,50 +14,107 @@
             -ms-user-select: none;
             user-select: none;
         }
+        .title{
+            margin-bottom:0.5rem;
+            font-size:24px;
+            color:green;
+
+        }
+        .content{
+            line-height: 2rem;
+        }
+        .box{
+            width:40rem;
+            border:1px solid;
+            padding:5px;
+            margin-bottom:30px;
+        }
     </style>
+    <script>
+        var toggleText = ture;
+        function toggleText(){
+            var text = document.getElementsByClassName("all")[0];
+            if (text.style.display === "none")
+                text.style.display = "block";
+            else
+                text.style.display = "none";
+        }
+    </script>
 </head>
 
 <body>
-    <h1>Git Summery</h1>
-    <dl>
-        <dt>git init</dt>
-            <dd>.git이라는 숨겨진 파일이 생성된다.</dd>
-            <br><br><br>
-        <dt>git remote add origin (github url)</dt>
-            <dd>로컬 저장소(PC)에 원격 저장소(github)를 연결하게 해준다.</dd>
-            <br><br><br>
-        <dt>git status</dt>
-            <dd>현재의 git 상태를 알려준다.</dd>
-            <dd>변경된 사항이 있는 디렉터리를 알려준다.</dd>
-            <br><br><br>
-        <dt>git add (Directory_Name)</dt>
-            <dd>디렉터리를 스테이지 영역에 등록한다.</dd>
-            <dd>디렉터리를 commit 하기 전 단계이다.</dd>
-            <br><br><br>
-        <dt>git commit -m "Message"</dt>
-            <dd>스테이지 영역에 있는 디렉터리를 commit한다.</dd>
-            <dd>메시지는 로그를 확인할 때 볼 수 있다.</dd>
-        <dt>git config --global user.name "User_Name"</dt>
-            <dd>사용자의 이름을 git에 입력한다.</dd>
-            <br><br><br>
-        <dt>git config --global user.email "User_Email"</dt>
-            <dd>사용자의 이메일을 git에 입력한다.</dd>
-            <br><br><br>
-        <dt>git log</dt>
-            <dd>지금까지 이루어진 로그를 확인한다.</dd>
-            <br><br><br>
-        <dt>git push -u origin (Branch_Name)</dt>
-            <dd>commit이 완료된 디렉터리를 github에 저장한다.</dd>
-         <br><br><br>
-         <dt>git push -u origin (Branch_Name)</dt>
-            <dd>commit이 완료된 디렉터리를 github에 저장한다.</dd>
-        <br><br><br>
-        <dt>git clone (github url) .(현재폴더) </dt>
-            <dd>init 명령어로 생성한 git저장소를 복제하여 사용한다.</dd>
-        <br><br><br>
-        <dt>git push -u origin (Branch_Name)</dt>
-            <dd>commit이 완료된 디렉터리를 github에 저장한다.</dd>
-         <br><br><br>
+    <h1 class="h1_tag">Git Summery</h1>
+    <button type="button" onclick="toggleText()">숨기기/보이기</button>
+
+    <dl class="all" id="all" style="display:block">
+        <div class="box">
+            <dt class="title">git init</dt>
+                <dd class="content">.git이라는 숨겨진 파일이 생성된다.</dd>
+        </div>
+        <div class="box">
+            <dt class="title">git remote add origin (github url)</dt>
+                <dd class="content">로컬 저장소(PC)에 원격 저장소(github)를 연결하게 해준다.</dd>
+        </div>
+        <div class="box">
+            <dt class="title">git status</dt>
+                <dd class="content">현재의 git 상태를 알려준다.</dd>
+                <dd class="content">변경된 사항이 있는 디렉터리를 알려준다.</dd>
+        </div>
+        <div class="box">
+            <dt class="title">git add (Directory_Name)</dt>
+                <dd class="content">디렉터리를 스테이지 영역에 등록한다.</dd>
+                <dd class="content">디렉터리를 commit 하기 전 단계이다.</dd>
+        </div>
+        <div class="box">
+        <dt class="title">git commit -m "Message"</dt>
+            <dd class="content">스테이지 영역에 있는 디렉터리를 commit한다.</dd>
+            <dd class="content">메시지는 로그를 확인할 때 볼 수 있다.</dd>
+        </div>
+        <div class="box">
+            <dt class="title">git config --global user.name "User_Name"</dt>
+                <dd class="content">사용자의 이름을 git에 입력한다.</dd>
+        </div>
+        <div class="box">
+            <dt class="title">git config --global user.email "User_Email"</dt>
+                <dd class="content">사용자의 이메일을 git에 입력한다.</dd>
+        </div>
+        <div class="box">
+            <dt class="title">git log</dt>
+                <dd class="content">지금까지 이루어진 로그를 확인한다.</dd>
+        </div>
+        <div class="box">
+            <dt class="title">git push -u origin (Branch_Name)</dt>
+                <dd class="content">commit이 완료된 디렉터리를 github에 저장한다.</dd>
+        </div>
+        <div class="box">
+            <dt class="title">git push -u origin (Branch_Name)</dt>
+            <dd class="content">commit이 완료된 디렉터리를 github에 저장한다.</dd>
+        </div>
+        <div class="box">
+            <dt class="title">git clone (github url) .(현재폴더) </dt>
+                <dd class="content">init 명령어로 생성한 git저장소를 복제하여 사용한다.</dd>
+        </div>
+        <div class="box">
+            <dt class="title">git push -u origin (Branch_Name)</dt>
+            <dd class="content">commit이 완료된 디렉터리를 github에 저장한다.</dd>
+        </div>
+        <div class="box">
+            <dt class="title">git branch (Branch_Name)</dt>
+                <dd class="content">새로운 branch를 생성한다.</dd>
+        </div>
+        <div class="box">
+            <dt class="title">git branch -v</dt>
+                <dd class="content">branch 목록을 볼 수 있다.</dd>
+                <dd class="content">현재 선택한 branch는 *표시로 확인할 수 있다.</dd>
+        </div>
+        <div class="box">
+            <dt class="title">git checkout (Branch_Name)</dt>
+                <dd class="content">입력한 branch의 작업 공간으로 이동할 수 있다.</dd>
+        </div>
+        <div class="box">
+                <dt class="title">git marge (Branch_Name)</dt>
+                    <dd class="content">현재 branch에 입력한 branch의 변경사항을 결합한다.</dd>
+        </div>
     </ul>
 </body>
 
