@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang='ko'>
 <head>
     <meta charset="utf-8">
@@ -14,39 +14,116 @@
             -ms-user-select: none;
             user-select: none;
         }
+	.all{
+            width:1000px;
+            text-align:center;
+            margin: 0px auto;
+        }
+
         .title{
             margin-bottom:0.5rem;
             font-size:24px;
             color:green;
-
         }
+
         .content{
             line-height: 2rem;
+            
         }
+
         .box{
-            width:40rem;
-            border:1px solid;
-            padding:5px;
+            border:1.5px solid;
+            padding:3px;
             margin-bottom:30px;
+            width:800px;
+            
         }
+
+        .button{
+            background-color: aqua;
+            font-size:18px;
+            padding: 10px 10px;
+            width: 80px;
+            height:40px;
+        }
+
+        .first,.second,.third {
+            list-style:none;
+            padding-left:100px;
+        }
+
+        .codelist {
+            margin-bottom:0px;
+            text-align:left;
+            padding-left:100px;
+            margin:5px;
+        }
+
     </style>
+
+
     <script>
-        var toggleText = ture;
-        function toggleText(){
-            var text = document.getElementsByClassName("all")[0];
-            if (text.style.display === "none")
-                text.style.display = "block";
-            else
-                text.style.display = "none";
+        function toggleText1() {
+            var text1 = document.getElementsByClassName("first")[0];
+            var text2 = document.getElementsByClassName("second")[0];
+            var text3 = document.getElementsByClassName("third")[0];
+            if (text1.style.display === "none") {
+                text1.style.display = "block";
+                text2.style.display = "none";
+                text3.style.display = "none";
+            }
+            else {
+                text1.style.display = "block";
+                text2.style.display = "none";
+                text3.style.display = "none";
+            }
+        }
+
+        function toggleText2() {
+            var text1 = document.getElementsByClassName("first")[0];
+            var text2 = document.getElementsByClassName("second")[0];
+            var text3 = document.getElementsByClassName("third")[0];
+            if (text2.style.display === "none") {
+                text1.style.display = "none";
+                text2.style.display = "block";
+                text3.style.display = "none";
+            }
+            else {
+                text1.style.display = "none";
+                text2.style.display = "block";
+                text3.style.display = "none";
+            }
+        }
+
+        function toggleText3() {
+            var text1 = document.getElementsByClassName("first")[0];
+            var text2 = document.getElementsByClassName("second")[0];
+            var text3 = document.getElementsByClassName("third")[0];
+            if (text3.style.display === "none") {
+                text1.style.display = "none";
+                text2.style.display = "none";
+                text3.style.display = "block";
+            }
+            else {
+                text1.style.display = "none";
+                text2.style.display = "none";
+                text3.style.display = "block";
+            }
         }
     </script>
 </head>
 
 <body>
+<div class="all">
     <h1 class="h1_tag">Git Summery</h1>
-    <button type="button" onclick="toggleText()">숨기기/보이기</button>
+    <button class="button" type="button" onclick="toggleText1()">First</button>
+    <button class="button" type="button" onclick="toggleText2()">Second</button>
+    <button class="button" type="button" onclick="toggleText3()">Third</button>
 
-    <dl class="all" id="all" style="display:block">
+    <p class="codelist">First : init, remote, status, add, commit</p>
+    <p class="codelist">Second : config --global, log, push, clone</p>
+    <p class="codelist">Third : branch, checkout, marge, reset, revert</p>
+    <ul class="first" style="display:block">
         <div class="box">
             <dt class="title">git init</dt>
                 <dd class="content">.git이라는 숨겨진 파일이 생성된다.</dd>
@@ -70,6 +147,8 @@
             <dd class="content">스테이지 영역에 있는 디렉터리를 commit한다.</dd>
             <dd class="content">메시지는 로그를 확인할 때 볼 수 있다.</dd>
         </div>
+    </ul>
+    <ul class="second" style="display:none">
         <div class="box">
             <dt class="title">git config --global user.name "User_Name"</dt>
                 <dd class="content">사용자의 이름을 git에 입력한다.</dd>
@@ -87,17 +166,11 @@
                 <dd class="content">commit이 완료된 디렉터리를 github에 저장한다.</dd>
         </div>
         <div class="box">
-            <dt class="title">git push -u origin (Branch_Name)</dt>
-            <dd class="content">commit이 완료된 디렉터리를 github에 저장한다.</dd>
-        </div>
-        <div class="box">
             <dt class="title">git clone (github url) .(현재폴더) </dt>
                 <dd class="content">init 명령어로 생성한 git저장소를 복제하여 사용한다.</dd>
         </div>
-        <div class="box">
-            <dt class="title">git push -u origin (Branch_Name)</dt>
-            <dd class="content">commit이 완료된 디렉터리를 github에 저장한다.</dd>
-        </div>
+    </ul>
+    <ul class="third" style="display:none">
         <div class="box">
             <dt class="title">git branch (Branch_Name)</dt>
                 <dd class="content">새로운 branch를 생성한다.</dd>
@@ -115,7 +188,17 @@
                 <dt class="title">git marge (Branch_Name)</dt>
                     <dd class="content">현재 branch에 입력한 branch의 변경사항을 결합한다.</dd>
         </div>
+        <div class="box">
+                <dt class="title">git reset (위치)</dt>
+                    <dd class="content">마지막 commit은 HEAD이며, 뒤에 ^, ^^를 붙이면 한 칸, 두 칸 이전 commit을 의미한다.</dd>
+                    <dd class="content">commit 기록만 삭제되고, 작업 내용은 유지된다.</dd>
+        </div>
+        <div class="box">
+                <dt class="title">git revert (위치)</dt>
+                    <dd class="content">어떤 commit을 되돌리는 것인지 메시지를 채워준다.</dd>
+        </div>
     </ul>
+</div>
 </body>
 
 
