@@ -28,7 +28,16 @@
     document.querySelector('body').style.backgroundColor='white';
     document.querySelector('body').style.color='black';
     ">
-
+    <input type="button" value="Night" id="night_day" onclick="
+    if(document.querySelector('#night_day').value === 'Night') {
+        document.querySelector('body').style.backgroundColor='black';
+        document.querySelector('body').style.color='white';
+        document.querySelector('#night_day').value = 'Day';
+    } else {
+        document.querySelector('body').style.backgroundColor='white';
+        document.querySelector('body').style.color='black';
+        document.querySelector('#night_day').value = 'Night';
+    }">
     <br>
     <input type="button" value="HI" onclick="alert('HI')";>
     <input type="text" onchange="alert('changed')">
@@ -37,8 +46,8 @@
     <p>
     <span id="first" class="js">Lorem</span> ipsum dolor sit amet <span>consectetur</span> adipisicing elit. Molestiae possimus sunt, fuga libero nemo eligendi voluptatibus, officiis ex minima illum velit inventore autem vitae. Minus esse officiis dolorum enim tempore?
     </p>
-    
-<!--13번 강의 볼 차례-->
+<!--1~12강 : night/day 기능, input을 통해 텍스트박스, 버튼 출력-->
+<!--13~17강 : 토글 기능(하나의 버튼으로 night/day기능 구현)-->
 </body>
 
 </html>
