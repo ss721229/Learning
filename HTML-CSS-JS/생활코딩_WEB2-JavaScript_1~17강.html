@@ -13,31 +13,42 @@
             color:blue;
         }
     </style>
+    <script>
+    function nightDayHandler(self){
+        var target = document.querySelector('body');
+        var spanlist = document.querySelectorAll('span');
+        var i = 0;
+        var btn = document.getElementsByClassName("handlerBtn");
+        /* or var btn = document.querySelectorAll('.' + self.className); */
+        if(self.value === 'Night') {
+            target.style.backgroundColor='black';
+            target.style.color='white';
+            btn[0].value='Day';
+            btn[1].value='Day';
+            while(i < spanlist.length)
+            {
+                spanlist[i].style.color='powderblue';
+                i+=1;
+            }
+        } else {
+            target.style.backgroundColor='white';
+            target.style.color='black';
+            btn[0].value='Night';
+            btn[1].value='Night';
+            while(i < spanlist.length)
+            {
+                spanlist[i].style.color='blue';
+                i+=1;
+            }
+        }
+    }
+    </script>
     <meta charset="utf-8">
     <title>Java Script</title>
 </head>
 <body>
     <h1 style="color:powderblue;background-color:purple">Java Script</h1>
-
-    <input type="button" value="Night" onclick="
-    document.querySelector('body').style.backgroundColor='black';
-    document.querySelector('body').style.color='white';
-    ">
-
-    <input type="button" value="Day"onclick="
-    document.querySelector('body').style.backgroundColor='white';
-    document.querySelector('body').style.color='black';
-    ">
-    <input type="button" value="Night" id="night_day" onclick="
-    if(document.querySelector('#night_day').value === 'Night') {
-        document.querySelector('body').style.backgroundColor='black';
-        document.querySelector('body').style.color='white';
-        document.querySelector('#night_day').value = 'Day';
-    } else {
-        document.querySelector('body').style.backgroundColor='white';
-        document.querySelector('body').style.color='black';
-        document.querySelector('#night_day').value = 'Night';
-    }">
+    <input type="button" value="Night" class="handlerBtn" onclick="nightDayHandler(this)">
     <br>
     <input type="button" value="HI" onclick="alert('HI')";>
     <input type="text" onchange="alert('changed')">
@@ -46,8 +57,10 @@
     <p>
     <span id="first" class="js">Lorem</span> ipsum dolor sit amet <span>consectetur</span> adipisicing elit. Molestiae possimus sunt, fuga libero nemo eligendi voluptatibus, officiis ex minima illum velit inventore autem vitae. Minus esse officiis dolorum enim tempore?
     </p>
+    <input type="button" value="Night" class="handlerBtn" onclick="nightDayHandler(this)">
 <!--1~12강 : night/day 기능, input을 통해 텍스트박스, 버튼 출력-->
 <!--13~17강 : 토글 기능(하나의 버튼으로 night/day기능 구현)-->
+<!--18~24강 : 변수를 통한 JS 중복 제거, 반복문-->
 </body>
 
 </html>
