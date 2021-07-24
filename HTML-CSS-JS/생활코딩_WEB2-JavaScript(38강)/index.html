@@ -4,59 +4,21 @@
     <style>
         .js{
             font-weight:bold;
-            color:purple;
+            color:green;
         }
         #first{
-            color:green;
+            color:blue;
         }
         span{
             color:blue;
         }
     </style>
-    <script>
-    var Body = {
-        setColor : function (color){
-            document.querySelector('body').style.color = color ;
-        },
-        setBackgroundColor : function (color){
-            document.querySelector('body').style.backgroundColor = color ;
-        }
-    }
-    function setColor(color){
-        var spanlist = document.querySelectorAll('span');
-        var i = 0;
-        while(i < spanlist.length)
-            {
-                spanlist[i].style.color = color;
-                i+=1;
-            }
-    }
-    function allBtnChange(dayOrNight) {
-        var btn = document.getElementsByClassName("handlerBtn");
-        /* or var btn = document.querySelectorAll('.' + self.className); */
-        for(var i = 0 ; i < btn.length ; i++)
-            btn[i].value = dayOrNight;
-    }
-    function nightDayHandler(self){
-        if(self.value === 'Night') {
-            Body.setBackgroundColor('black');
-            Body.setColor('white');
-            allBtnChange('Day');
-            setColor('powderblue');
-
-        } else {
-            Body.setBackgroundColor('white');
-            Body.setColor('black');
-            allBtnChange('Night');
-            setColor('blue');
-        }
-    }
-    </script>
+    <script src="javascript.js"></script>
     <meta charset="utf-8">
-    <title>Java Script</title>
+    <title>생활코딩 WEB2 JavaScript</title>
 </head>
 <body>
-    <h1 style="color:powderblue;background-color:purple">Java Script</h1>
+    <h1 style="color:darkkhaki;background-color:fuchsia">Java Script</h1>
     <input type="button" value="Night" class="handlerBtn" onclick="nightDayHandler(this)">
     <br>
     <input type="button" value="HI" onclick="alert('HI')";>
@@ -70,7 +32,7 @@
 <!--1~12강 : night/day 기능, input을 통해 텍스트박스, 버튼 출력-->
 <!--13~17강 : 토글 기능(하나의 버튼으로 night/day기능 구현)-->
 <!--18~24강 : 변수를 통한 JS 중복 제거, 반복문-->
-<!--25~강 : 함수(parameter, argument, return), 객체 -->
+<!--25~34강 : 함수(parameter, argument, return), 객체, JS파일 생성을 통한 코드 정리 -->
 </body>
 
 </html>
